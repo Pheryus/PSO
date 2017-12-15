@@ -1,0 +1,1072 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fd065112088, pid=3365, tid=0x00007fd0196bc700
+#
+# JRE version: OpenJDK Runtime Environment (8.0_112-b21) (build 1.8.0_112-release-736-b21)
+# Java VM: OpenJDK 64-Bit Server VM (25.112-b21 mixed mode linux-amd64 compressed oops)
+# Problematic frame:
+# v  ~BufferBlob::vtable chunks
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fd04503f800):  JavaThread "JobScheduler FJ pool 1/2" daemon [_thread_in_Java, id=4303, stack(0x00007fd0195bc000,0x00007fd0196bd000)]
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00000006dc56e210
+
+Registers:
+RAX=0x0000000100321720, RBX=0x00007fd01b4ae488, RCX=0x0000000000000000, RDX=0x00000000df2bc358
+RSP=0x00007fd0196b9638, RBP=0x00000000db8adc10, RSI=0x00000000db8adc10, RDI=0x00007fd018756700
+R8 =0x00000000d3340170, R9 =0x00000000d3340170, R10=0x00000006dc56e100, R11=0x00000000db8adc20
+R12=0x0000000000000000, R13=0x0000000100ed9780, R14=0x00000000d3340170, R15=0x00007fd04503f800
+RIP=0x00007fd065112088, EFLAGS=0x0000000000010216, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fd0196b9638)
+0x00007fd0196b9638:   00007fd0694576c8 00000000d335f298
+0x00007fd0196b9648:   0000000000000000 00000000df2bc358
+0x00007fd0196b9658:   0000000000000000 00000000d335d0d0
+0x00007fd0196b9668:   00000000d3340170 00000000dcec71b0
+0x00007fd0196b9678:   00007fd067d22250 00000000d33401c0
+0x00007fd0196b9688:   00007fd068b120d4 0000000000000000
+0x00007fd0196b9698:   0000000100000004 00000000dcec71b0
+0x00007fd0196b96a8:   00007fd06e39cd80 0000000100098fd8
+0x00007fd0196b96b8:   0000000100e699a8 0000000100363a58
+0x00007fd0196b96c8:   00000000d335f820 00000000d3340170
+0x00007fd0196b96d8:   d3340170d335d2a0 00000001001d3570
+0x00007fd0196b96e8:   0000000100ed9960 00000001000595b8
+0x00007fd0196b96f8:   0000000100019c40 0000000000000001
+0x00007fd0196b9708:   00000000e3bbd408 00000000dce3fbc8
+0x00007fd0196b9718:   00007fd06bc9a4ac 00000000d3340170
+0x00007fd0196b9728:   00000000dcec71b0 00000000deca7b98
+0x00007fd0196b9738:   00000000d332e010 00000000d335f298
+0x00007fd0196b9748:   00000000d3370860 00000000d3370860
+0x00007fd0196b9758:   00000000dbdef2b0 0000000000000007
+0x00007fd0196b9768:   0000000000000001 00000000d3332038
+0x00007fd0196b9778:   00000000dee49740 00000000e26d3e60
+0x00007fd0196b9788:   00007fd06e1c4ec0 00000000d3340170
+0x00007fd0196b9798:   00007fd0693de758 00000000d3340170
+0x00007fd0196b97a8:   00000000d33401c0 00000000d333e1a0
+0x00007fd0196b97b8:   00000000d33401c0 0000000000000001
+0x00007fd0196b97c8:   00000000d332e010 00000000d3340170
+0x00007fd0196b97d8:   00007fd066f14310 00000000d332e090
+0x00007fd0196b97e8:   00000000d3332148 00000000d332e090
+0x00007fd0196b97f8:   0000000000000007 0000000000000058
+0x00007fd0196b9808:   00000000d3420438 0000000000000009
+0x00007fd0196b9818:   00007fd067d0cc68 00000000d332e010
+0x00007fd0196b9828:   00007fd06dbe47dc 0000000100040960 
+
+Instructions: (pc=0x00007fd065112088)
+0x00007fd065112068:   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+0x00007fd065112078:   01 00 40 00 00 00 00 00 44 8b 56 08 49 c1 e2 03
+0x00007fd065112088:   45 8b 9a 10 01 00 00 4f 8d 9c da a8 01 00 00 4d
+0x00007fd065112098:   8d 52 08 49 8b 1b 48 3b c3 74 15 48 85 db 0f 84 
+
+Register to memory mapping:
+
+RAX=0x0000000100321720 is pointing into metadata
+RBX={method} {0x00007fd01b4ae488} 'getUserMap' '()Lcom/intellij/util/keyFMap/KeyFMap;' in 'com/intellij/openapi/util/UserDataHolderBase'
+RCX=0x0000000000000000 is an unknown value
+RDX=0x00000000df2bc358 is an oop
+com.intellij.openapi.util.Key 
+ - klass: 'com/intellij/openapi/util/Key'
+RSP=0x00007fd0196b9638 is pointing into the stack for thread: 0x00007fd04503f800
+RBP=0x00000000db8adc10 is pointing into object: 0x00000000db8adc08
+javax.swing.event.EventListenerList 
+ - klass: 'javax/swing/event/EventListenerList'
+RSI=0x00000000db8adc10 is pointing into object: 0x00000000db8adc08
+javax.swing.event.EventListenerList 
+ - klass: 'javax/swing/event/EventListenerList'
+RDI=0x00007fd018756700 is pointing into metadata
+R8 =
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0x00007fd0195bc000,0x00007fd0196bd000],  sp=0x00007fd0196b9638,  free space=1013k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+v  ~BufferBlob::vtable chunks
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00007fd03c064000 JavaThread "JobScheduler FJ pool 2/2" daemon [_thread_blocked, id=4304, stack(0x00007fd012ff8000,0x00007fd0130f9000)]
+=>0x00007fd04503f800 JavaThread "JobScheduler FJ pool 1/2" daemon [_thread_in_Java, id=4303, stack(0x00007fd0195bc000,0x00007fd0196bd000)]
+  0x00007fd04503e800 JavaThread "JobScheduler FJ pool 0/2" daemon [_thread_blocked, id=4302, stack(0x00007fd017e2f000,0x00007fd017f30000)]
+  0x00007fd045056800 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=4301, stack(0x00007fd018f70000,0x00007fd019071000)]
+  0x00007fd054152800 JavaThread "Process I/O pool 34" [_thread_blocked, id=4212, stack(0x00007fd012df6000,0x00007fd012ef7000)]
+  0x00007fd054151800 JavaThread "Process I/O pool 33" [_thread_blocked, id=4211, stack(0x00007fd016f5c000,0x00007fd01705d000)]
+  0x00007fd054151000 JavaThread "Process I/O pool 32" [_thread_blocked, id=4210, stack(0x00007fd01bcd9000,0x00007fd01bdda000)]
+  0x00007fd0540ce800 JavaThread "process reaper" daemon [_thread_blocked, id=4209, stack(0x00007fd05c712000,0x00007fd05c74b000)]
+  0x00007fd04503e000 JavaThread "ApplicationImpl pooled thread 33" [_thread_blocked, id=4205, stack(0x00007fd014758000,0x00007fd014859000)]
+  0x00007fd04409d800 JavaThread "ApplicationImpl pooled thread 31" [_thread_blocked, id=4165, stack(0x00007fd014c59000,0x00007fd014d5a000)]
+  0x00007fd038c59800 JavaThread "ApplicationImpl pooled thread 27" [_thread_blocked, id=4080, stack(0x00007fd013554000,0x00007fd013655000)]
+  0x00007fd044c01800 JavaThread "MarlinRenderer Disposer" daemon [_thread_blocked, id=3428, stack(0x00007fd01765d000,0x00007fd01775e000)]
+  0x00007fd074a63000 JavaThread "TimerQueue" daemon [_thread_blocked, id=3402, stack(0x00007fd018c6f000,0x00007fd018d70000)]
+  0x00007fd05801c800 JavaThread "Netty Builtin Server 2" [_thread_in_native, id=3400, stack(0x00007fd019071000,0x00007fd019172000)]
+  0x00007fd0445b7000 JavaThread "BaseDataReader: error stream of fsnotifier64" [_thread_in_native, id=3394, stack(0x00007fd01a0b3000,0x00007fd01a1b4000)]
+  0x00007fd0445af800 JavaThread "BaseDataReader: output stream of fsnotifier64" [_thread_in_native, id=3393, stack(0x00007fd01a1b4000,0x00007fd01a2b5000)]
+  0x00007fd0445b5000 JavaThread "ProcessWaitFor: fsnotifier64" [_thread_blocked, id=3392, stack(0x00007fd01c5fc000,0x00007fd01c6fd000)]
+  0x0000000000ec8000 JavaThread "AWT-EventQueue-0 2017.1.2#PY-171.4249.47 PyCharm, eap:false, os:Linux 4.9.0-4-amd64, java-version:JetBrains s.r.o 1.8.0_112-release-736-b21" [_thread_blocked, id=3389, stack(0x00007fd01b4d5000,0x00007fd01b5d6000)]
+  0x0000000000e0c000 JavaThread "AWT-Shutdown" [_thread_blocked, id=3388, stack(0x00007fd01b7d6000,0x00007fd01b8d7000)]
+  0x0000000000e11000 JavaThread "Periodic tasks thread" [_thread_blocked, id=3387, stack(0x00007fd01b8d7000,0x00007fd01b9d8000)]
+  0x0000000000c33800 JavaThread "Timer-0" daemon [_thread_blocked, id=3386, stack(0x00007fd01bbd8000,0x00007fd01bcd9000)]
+  0x0000000000d44000 JavaThread "Netty Builtin Server 1" [_thread_in_native, id=3384, stack(0x00007fd01c2fb000,0x00007fd01c3fc000)]
+  0x0000000000c55000 JavaThread "process reaper" daemon [_thread_in_native, id=3383, stack(0x00007fd03401d000,0x00007fd034056000)]
+  0x00007fd07400b800 JavaThread "DestroyJavaVM" [_thread_blocked, id=3366, stack(0x00007fd07b5fd000,0x00007fd07b6fe000)]
+  0x00007fd0748c2800 JavaThread "AWT-XAWT" daemon [_thread_in_native, id=3380, stack(0x00007fd0355d3000,0x00007fd0356d4000)]
+  0x00007fd0748a7800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=3379, stack(0x00007fd035ae5000,0x00007fd035be6000)]
+  0x00007fd07412b000 JavaThread "Service Thread" daemon [_thread_blocked, id=3377, stack(0x00007fd05cc8e000,0x00007fd05cd8f000)]
+  0x00007fd074116000 JavaThread "C1 CompilerThread1" daemon [_thread_blocked, id=3376, stack(0x00007fd05cd8f000,0x00007fd05ce90000)]
+  0x00007fd074114000 JavaThread "C2 CompilerThread0" daemon [_thread_in_native, id=3375, stack(0x00007fd05ce90000,0x00007fd05cf91000)]
+  0x00007fd074112000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=3374, stack(0x00007fd05cf91000,0x00007fd05d092000)]
+  0x00007fd07410e000 JavaThread "Surrogate Locker Thread (Concurrent GC)" daemon [_thread_blocked, id=3373, stack(0x00007fd05d092000,0x00007fd05d193000)]
+  0x00007fd0740dd800 JavaThread "Finalizer" daemon [_thread_blocked, id=3372, stack(0x00007fd05d32e000,0x00007fd05d42f000)]
+  0x00007fd0740d9000 JavaThread "Reference Handler" daemon [_thread_blocked, id=3371, stack(0x00007fd05d42f000,0x00007fd05d530000)]
+
+Other Threads:
+  0x00007fd0740d1800 VMThread [stack: 0x00007fd05d530000,0x00007fd05d631000] [id=3370]
+  0x00007fd07412e000 WatcherThread [stack: 0x00007fd05cb8d000,0x00007fd05cc8e000] [id=3378]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ par new generation   total 39296K, used 38901K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,  98% used [0x00000000d1200000, 0x00000000d33bd750, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 160520K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176276K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+
+Card table byte_map: [0x00007fd078107000,0x00007fd07827f000] byte_map_base: 0x00007fd077a7e000
+
+Marking Bits: (CMSBitMap*) 0x00007fd07404a898
+ Bits: [0x00007fd0644bc000, 0x00007fd064dda800)
+
+Mod Union Table: (CMSBitMap*) 0x00007fd07404a958
+ Bits: [0x00007fd07b5d8000, 0x00007fd07b5fc7a0)
+
+Polling page: 0x00007fd07b71c000
+
+CodeCache: size=245760Kb used=157731Kb max_used=157731Kb free=88028Kb
+ bounds [0x00007fd065000000, 0x00007fd06eb10000, 0x00007fd074000000]
+ total_blobs=34546 nmethods=33380 adapters=1075
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 1919,508 Thread 0x00007fd074116000 52023       3       com.intellij.util.indexing.impl.ValueContainerImpl$1::getValueAssociationPredicate (42 bytes)
+Event: 1919,509 Thread 0x00007fd074116000 nmethod 52023 0x00007fd06d3c7a90 code [0x00007fd06d3c7d00, 0x00007fd06d3c8c48]
+Event: 1919,517 Thread 0x00007fd074116000 52024       3       com.intellij.util.text.ImmutableText$WideLeafNode::getChars (80 bytes)
+Event: 1919,518 Thread 0x00007fd074116000 nmethod 52024 0x00007fd06991eb90 code [0x00007fd06991ee20, 0x00007fd069920018]
+Event: 1919,534 Thread 0x00007fd074116000 52025   !   3       com.jetbrains.python.codeInsight.controlflow.PyControlFlowBuilder::a (38 bytes)
+Event: 1919,535 Thread 0x00007fd074116000 nmethod 52025 0x00007fd065146710 code [0x00007fd0651468a0, 0x00007fd065146e68]
+Event: 1919,536 Thread 0x00007fd074116000 52026   !   3       com.intellij.psi.impl.source.PsiFileImpl::getStubTree (445 bytes)
+Event: 1919,540 Thread 0x00007fd074116000 nmethod 52026 0x00007fd06eafa3d0 code [0x00007fd06eafab20, 0x00007fd06eaffac8]
+Event: 1919,578 Thread 0x00007fd074116000 52027       3       com.jetbrains.python.parsing.ExpressionParsing::c (81 bytes)
+Event: 1919,579 Thread 0x00007fd074116000 nmethod 52027 0x00007fd068a6b290 code [0x00007fd068a6b4c0, 0x00007fd068a6be28]
+
+GC Heap History (10 events):
+Event: 1907,662 GC heap before
+{Heap before GC invocations=517 (full 32):
+ par new generation   total 39296K, used 39296K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 330444K, used 126814K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176253K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23137K, capacity 25301K, committed 25316K, reserved 1048576K
+Event: 1907,701 GC heap after
+Heap after GC invocations=518 (full 32):
+ par new generation   total 39296K, used 3543K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K,  81% used [0x00000000d3420000, 0x00000000d3795f68, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 130293K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176253K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23137K, capacity 25301K, committed 25316K, reserved 1048576K
+}
+Event: 1907,921 GC heap before
+{Heap before GC invocations=518 (full 32):
+ par new generation   total 39296K, used 38487K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K,  81% used [0x00000000d3420000, 0x00000000d3795f68, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 130293K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176260K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23137K, capacity 25301K, committed 25316K, reserved 1048576K
+Event: 1908,016 GC heap after
+Heap after GC invocations=519 (full 32):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 330444K, used 152083K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176260K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23137K, capacity 25301K, committed 25316K, reserved 1048576K
+}
+Event: 1917,720 GC heap before
+{Heap before GC invocations=519 (full 32):
+ par new generation   total 39296K, used 39296K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3860000, 0x00000000d3ca0000, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 330444K, used 152083K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176261K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+Event: 1917,757 GC heap after
+Heap after GC invocations=520 (full 32):
+ par new generation   total 39296K, used 3127K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K,  71% used [0x00000000d3420000, 0x00000000d372de28, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 156127K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176261K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+}
+Event: 1918,591 GC heap before
+{Heap before GC invocations=520 (full 32):
+ par new generation   total 39296K, used 38071K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K,  71% used [0x00000000d3420000, 0x00000000d372de28, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 156127K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176261K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+Event: 1918,610 GC heap after
+Heap after GC invocations=521 (full 32):
+ par new generation   total 39296K, used 2501K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K,  57% used [0x00000000d3860000, 0x00000000d3ad1490, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 330444K, used 158097K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176261K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+}
+Event: 1919,418 GC heap before
+{Heap before GC invocations=521 (full 32):
+ par new generation   total 39296K, used 37445K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K, 100% used [0x00000000d1200000, 0x00000000d3420000, 0x00000000d3420000)
+  from space 4352K,  57% used [0x00000000d3860000, 0x00000000d3ad1490, 0x00000000d3ca0000)
+  to   space 4352K,   0% used [0x00000000d3420000, 0x00000000d3420000, 0x00000000d3860000)
+ concurrent mark-sweep generation total 330444K, used 158097K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176275K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+Event: 1919,438 GC heap after
+Heap after GC invocations=522 (full 32):
+ par new generation   total 39296K, used 4352K [0x00000000d1200000, 0x00000000d3ca0000, 0x00000000db860000)
+  eden space 34944K,   0% used [0x00000000d1200000, 0x00000000d1200000, 0x00000000d3420000)
+  from space 4352K, 100% used [0x00000000d3420000, 0x00000000d3860000, 0x00000000d3860000)
+  to   space 4352K,   0% used [0x00000000d3860000, 0x00000000d3860000, 0x00000000d3ca0000)
+ concurrent mark-sweep generation total 330444K, used 160520K [0x00000000db860000, 0x00000000efb13000, 0x0000000100000000)
+ Metaspace       used 176275K, capacity 187417K, committed 187556K, reserved 1212416K
+  class space    used 23138K, capacity 25301K, committed 25316K, reserved 1048576K
+}
+
+Deoptimization events (10 events):
+Event: 1918,564 Thread 0x00007fd04503e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fd06aea9fa4 method=com.intellij.psi.css.descriptor.CssElementDescriptor$CssVersion.fromString(Ljava/lang/String;)Lcom/intellij/psi/css/descriptor/CssElementDescriptor$CssVersion; @ 3
+Event: 1918,564 Thread 0x00007fd04503e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fd067f94a0c method=com.intellij.psi.css.descriptor.CssElementDescriptor$CssVersion.fromString(Ljava/lang/String;)Lcom/intellij/psi/css/descriptor/CssElementDescriptor$CssVersion; @ 3
+Event: 1918,576 Thread 0x00007fd04503e800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fd06c1ad918 method=com.intellij.psi.css.descriptor.CssElementDescriptor$CssVersion.fromString(Ljava/lang/String;)Lcom/intellij/psi/css/descriptor/CssElementDescriptor$CssVersion; @ 50
+Event: 1918,952 Thread 0x00007fd04503f800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fd06c8aa0ec method=com.intellij.psi.css.descriptor.CssElementDescriptor$CssVersion.fromString(Ljava/lang/String;)Lcom/intellij/psi/css/descriptor/CssElementDescriptor$CssVersion; @ 97
+Event: 1918,952 Thread 0x00007fd04503f800 Uncommon trap: reason=null_check action=make_not_entrant pc=0x00007fd06ad3e770 method=com.intellij.psi.css.descriptor.CssElementDescriptor$CssVersion.fromString(Ljava/lang/String;)Lcom/intellij/psi/css/descriptor/CssElementDescriptor$CssVersion; @ 97
+Event: 1919,445 Thread 0x00007fd04503e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fd06aa3fbb0 method=com.intellij.openapi.fileEditor.impl.FileDocumentManagerImpl.getDocument(Lcom/intellij/openapi/vfs/VirtualFile;)Lcom/intellij/openapi/editor/Document; @ 168
+Event: 1919,510 Thread 0x00007fd04503e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fd0698face8 method=com.intellij.psi.impl.source.PsiFileImpl.getStubTree()Lcom/intellij/psi/stubs/StubTree; @ 155
+Event: 1919,554 Thread 0x00007fd04503f800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fd06b87a150 method=com.jetbrains.python.psi.impl.PyClassImpl.a()Lcom/jetbrains/python/psi/types/TypeEvalContextBasedCache; @ 62
+Event: 1919,609 Thread 0x00007fd04503e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fd06762c504 method=com.jetbrains.python.psi.impl.PyClassImpl.a()Lcom/jetbrains/python/psi/types/TypeEvalContextBasedCache; @ 62
+Event: 1919,617 Thread 0x00007fd04503e800 Uncommon trap: reason=unstable_if action=reinterpret pc=0x00007fd066b5b7c8 method=java.util.concurrent.ConcurrentHashMap.initTable()[Ljava/util/concurrent/ConcurrentHashMap$Node; @ 20
+
+Internal exceptions (10 events):
+Event: 1907,710 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 79> (0x00000000d13f1518) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,711 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 63> (0x00000000d141fa38) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,711 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 63> (0x00000000d14244e0) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,713 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 56> (0x00000000d14a5bf0) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,713 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 62> (0x00000000d14ab2a0) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,719 Thread 0x0000000000ec8000 Exception <a 'java/lang/ArrayIndexOutOfBoundsException': 165> (0x00000000d164f920) thrown at [/jonnyzzz/hotspot/src/share/vm/interpreter/interpreterRuntime.cpp, line 366]
+Event: 1907,728 Thread 0x0000000000ec8000 Exception <a 'sun/nio/fs/UnixException'> (0x00000000d1760a18) thrown at [/jonnyzzz/hotspot/src/share/vm/prims/jni.cpp, line 709]
+Event: 1918,564 Thread 0x00007fd04503e800 Implicit null exception at 0x00007fd067f94722 to 0x00007fd067f94a00
+Event: 1918,576 Thread 0x00007fd04503e800 Implicit null exception at 0x00007fd06c1ad6b7 to 0x00007fd06c1ad90d
+Event: 1918,952 Thread 0x00007fd04503f800 Implicit null exception at 0x00007fd06c8a9f0c to 0x00007fd06c8aa0df
+
+Events (10 events):
+Event: 1919,609 Thread 0x00007fd04503e800 DEOPT UNPACKING pc=0x00007fd065004f69 sp=0x00007fd017f2b748 mode 2
+Event: 1919,612 Executing VM operation: RevokeBias
+Event: 1919,616 Executing VM operation: RevokeBias done
+Event: 1919,617 Thread 0x00007fd04503e800 Uncommon trap: trap_request=0xffffff65 fr.pc=0x00007fd066b5b7c8
+Event: 1919,618 Thread 0x00007fd04503e800 DEOPT PACKING pc=0x00007fd066b5b7c8 sp=0x00007fd017f2bad0
+Event: 1919,618 Thread 0x00007fd04503e800 DEOPT UNPACKING pc=0x00007fd065004f69 sp=0x00007fd017f2b9f0 mode 2
+Event: 1919,619 Executing VM operation: RevokeBias
+Event: 1919,621 Executing VM operation: RevokeBias done
+Event: 1919,627 Executing VM operation: RevokeBias
+Event: 1919,627 Executing VM operation: RevokeBias done
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 08:01 8522885                            /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/bin/java
+00600000-00601000 rw-p 00000000 08:01 8522885                            /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/bin/java
+00bad000-015c7000 rw-p 00000000 00:00 0                                  [heap]
+d1200000-d3ca0000 rw-p 00000000 00:00 0 
+d3ca0000-db860000 ---p 00000000 00:00 0 
+db860000-efb13000 rw-p 00000000 00:00 0 
+efb13000-100000000 ---p 00000000 00:00 0 
+100000000-1018b9000 rw-p 00000000 00:00 0 
+1018b9000-140000000 ---p 00000000 00:00 0 
+7fd00fff6000-7fd010076000 rw-p 00000000 00:00 0 
+7fd010076000-7fd0101f6000 ---p 00000000 00:00 0 
+7fd0101f6000-7fd0103f6000 rw-p 00000000 00:00 0 
+7fd0103f6000-7fd0105f6000 rw-p 00000000 00:00 0 
+7fd0105f6000-7fd0107f6000 rw-p 00000000 00:00 0 
+7fd0107f6000-7fd0109f6000 rw-p 00000000 00:00 0 
+7fd0109f6000-7fd010bf6000 rw-p 00000000 00:00 0 
+7fd010bf6000-7fd010df6000 rw-p 00000000 00:00 0 
+7fd010df6000-7fd010ff6000 rw-p 00000000 00:00 0 
+7fd010ff6000-7fd0111f6000 rw-p 00000000 00:00 0 
+7fd0111f6000-7fd0113f6000 rw-p 00000000 00:00 0 
+7fd0113f6000-7fd0115f6000 rw-p 00000000 00:00 0 
+7fd0115f6000-7fd0117f6000 rw-p 00000000 00:00 0 
+7fd0117f6000-7fd0119f6000 rw-p 00000000 00:00 0 
+7fd0119f6000-7fd011bf6000 rw-p 00000000 00:00 0 
+7fd011bf6000-7fd011df6000 rw-p 00000000 00:00 0 
+7fd011df6000-7fd011ff6000 rw-p 00000000 00:00 0 
+7fd011ff6000-7fd0121f6000 rw-p 00000000 00:00 0 
+7fd0121f6000-7fd0123f6000 rw-p 00000000 00:00 0 
+7fd0123f6000-7fd0125f6000 rw-p 00000000 00:00 0 
+7fd0125f6000-7fd0127f6000 rw-p 00000000 00:00 0 
+7fd0127f6000-7fd0129f6000 rw-p 00000000 00:00 0 
+7fd0129f6000-7fd012bf6000 rw-p 00000000 00:00 0 
+7fd012bf6000-7fd012df6000 rw-p 00000000 00:00 0 
+7fd012df6000-7fd012df9000 ---p 00000000 00:00 0 
+7fd012df9000-7fd012ef7000 rw-p 00000000 00:00 0 
+7fd012ef7000-7fd012efa000 ---p 00000000 00:00 0 
+7fd012efa000-7fd012ff8000 rw-p 00000000 00:00 0 
+7fd012ff8000-7fd012ffb000 ---p 00000000 00:00 0 
+7fd012ffb000-7fd0132f9000 rw-p 00000000 00:00 0 
+7fd0132f9000-7fd01334f000 r-xp 00000000 08:01 8522778                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/liblcms.so
+7fd01334f000-7fd01354f000 ---p 00056000 08:01 8522778                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/liblcms.so
+7fd01354f000-7fd013554000 rw-p 00056000 08:01 8522778                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/liblcms.so
+7fd013554000-7fd013557000 ---p 00000000 00:00 0 
+7fd013557000-7fd013855000 rw-p 00000000 00:00 0 
+7fd013855000-7fd013a55000 rw-p 00000000 00:00 0 
+7fd013a55000-7fd013c55000 rw-p 00000000 00:00 0 
+7fd013c55000-7fd013e55000 rw-p 00000000 00:00 0 
+7fd013e55000-7fd013e58000 ---p 00000000 00:00 0 
+7fd013e58000-7fd014156000 rw-p 00000000 00:00 0 
+7fd014156000-7fd014159000 ---p 00000000 00:00 0 
+7fd014159000-7fd014457000 rw-p 00000000 00:00 0 
+7fd014457000-7fd014657000 rw-p 00000000 00:00 0 
+7fd014657000-7fd01465a000 ---p 00000000 00:00 0 
+7fd01465a000-7fd014758000 rw-p 00000000 00:00 0 
+7fd014758000-7fd01475b000 ---p 00000000 00:00 0 
+7fd01475b000-7fd014a59000 rw-p 00000000 00:00 0 
+7fd014a59000-7fd014c59000 rw-p 00000000 00:00 0 
+7fd014c59000-7fd014c5c000 ---p 00000000 00:00 0 
+7fd014c5c000-7fd014f5a000 rw-p 00000000 00:00 0 
+7fd014f5a000-7fd01515a000 rw-p 00000000 00:00 0 
+7fd01515a000-7fd01535a000 rw-p 00000000 00:00 0 
+7fd01535a000-7fd01555a000 rw-p 00000000 00:00 0 
+7fd01555a000-7fd01575a000 rw-p 00000000 00:00 0 
+7fd01575a000-7fd01595a000 rw-p 00000000 00:00 0 
+7fd01595a000-7fd015b5a000 rw-p 00000000 00:00 0 
+7fd015b5a000-7fd015b5d000 ---p 00000000 00:00 0 
+7fd015b5d000-7fd015e5b000 rw-p 00000000 00:00 0 
+7fd015e5b000-7fd01605b000 rw-p 00000000 00:00 0 
+7fd01605b000-7fd01625b000 rw-p 00000000 00:00 0 
+7fd01625b000-7fd01645b000 rw-p 00000000 00:00 0 
+7fd01645b000-7fd01665b000 rw-p 00000000 00:00 0 
+7fd01665b000-7fd01685b000 rw-p 00000000 00:00 0 
+7fd01685b000-7fd016a5b000 rw-p 00000000 00:00 0 
+7fd016a5b000-7fd016a5e000 ---p 00000000 00:00 0 
+7fd016a5e000-7fd016d5c000 rw-p 00000000 00:00 0 
+7fd016d5c000-7fd016f5c000 rw-p 00000000 00:00 0 
+7fd016f5c000-7fd016f5f000 ---p 00000000 00:00 0 
+7fd016f5f000-7fd01725d000 rw-p 00000000 00:00 0 
+7fd01725d000-7fd01745d000 rw-p 00000000 00:00 0 
+7fd01745d000-7fd01765d000 rw-p 00000000 00:00 0 
+7fd01765d000-7fd017660000 ---p 00000000 00:00 0 
+7fd017660000-7fd01795e000 rw-p 00000000 00:00 0 
+7fd01795e000-7fd017b5e000 rw-p 00000000 00:00 0 
+7fd017b5e000-7fd017d5e000 rw-p 00000000 00:00 0 
+7fd017e2f000-7fd017e32000 ---p 00000000 00:00 0 
+7fd017e32000-7fd018128000 rw-p 00000000 00:00 0 
+7fd018128000-7fd018130000 ---p 00000000 00:00 0 
+7fd018130000-7fd018135000 r-xp 00000000 08:01 131493                     /lib/x86_64-linux-gnu/libnss_dns-2.24.so
+7fd018135000-7fd018334000 ---p 00005000 08:01 131493                     /lib/x86_64-linux-gnu/libnss_dns-2.24.so
+7fd018334000-7fd018335000 r--p 00004000 08:01 131493                     /lib/x86_64-linux-gnu/libnss_dns-2.24.so
+7fd018335000-7fd018336000 rw-p 00005000 08:01 131493                     /lib/x86_64-linux-gnu/libnss_dns-2.24.so
+7fd018336000-7fd018338000 r-xp 00000000 08:01 131426                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fd018338000-7fd018537000 ---p 00002000 08:01 131426                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fd018537000-7fd018538000 r--p 00001000 08:01 131426                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fd018538000-7fd018539000 rw-p 00002000 08:01 131426                     /lib/x86_64-linux-gnu/libnss_mdns4_minimal.so.2
+7fd01855b000-7fd01875b000 rw-p 00000000 00:00 0 
+7fd018761000-7fd018960000 rw-p 00000000 00:00 0 
+7fd018960000-7fd018961000 ---p 00000000 00:00 0 
+7fd018961000-7fd018964000 r--s 0002f000 08:01 8522464                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/concurrency-visualiser/lib/concurrency-visualiser.jar
+7fd01896e000-7fd018b6b000 rw-p 00000000 00:00 0 
+7fd018b6b000-7fd018b71000 ---p 00000000 00:00 0 
+7fd018b71000-7fd018c6f000 rw-p 00000000 00:00 0 
+7fd018c6f000-7fd018c72000 ---p 00000000 00:00 0 
+7fd018c72000-7fd018f70000 rw-p 00000000 00:00 0 
+7fd018f70000-7fd018f73000 ---p 00000000 00:00 0 
+7fd018f73000-7fd019071000 rw-p 00000000 00:00 0 
+7fd019071000-7fd019074000 ---p 00000000 00:00 0 
+7fd019074000-7fd019372000 rw-p 00000000 00:00 0 
+7fd019372000-7fd0193a5000 r-xp 00000000 08:01 8522789                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsunec.so
+7fd0193a5000-7fd0195a5000 ---p 00033000 08:01 8522789                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsunec.so
+7fd0195a5000-7fd0195ab000 rw-p 00033000 08:01 8522789                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsunec.so
+7fd0195ab000-7fd0195bc000 rw-p 00000000 00:00 0 
+7fd0195bc000-7fd0195bf000 ---p 00000000 00:00 0 
+7fd0195bf000-7fd0198bd000 rw-p 00000000 00:00 0 
+7fd0198cc000-7fd019acc000 rw-p 00000000 00:00 0 
+7fd019acc000-7fd019acf000 ---p 00000000 00:00 0 
+7fd019acf000-7fd019dcd000 rw-p 00000000 00:00 0 
+7fd019e66000-7fd019e6e000 r--s 001bd000 08:01 8522460                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/coffeescript-core/lib/coffeescript-core.jar
+7fd019e6f000-7fd019e75000 r--s 00089000 08:01 8522486                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/gherkin/lib/gherkin.jar
+7fd019e79000-7fd019e7a000 rwxp 00000000 00:00 0 
+7fd019e7a000-7fd019e7d000 ---p 00000000 00:00 0 
+7fd019e7d000-7fd01a0b3000 rw-p 00000000 00:00 0 
+7fd01a0b3000-7fd01a0b6000 ---p 00000000 00:00 0 
+7fd01a0b6000-7fd01a1b4000 rw-p 00000000 00:00 0 
+7fd01a1b4000-7fd01a1b7000 ---p 00000000 00:00 0 
+7fd01a1b7000-7fd01a466000 rw-p 00000000 00:00 0 
+7fd01a523000-7fd01a526000 r--s 00035000 08:01 8522682                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/terminal/lib/terminal.jar
+7fd01a527000-7fd01a52c000 r--s 00091000 08:01 8522498                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/github/lib/github.jar
+7fd01a568000-7fd01a56d000 r--s 000ad000 08:01 8522292                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/IntelliLang/lib/IntelliLang.jar
+7fd01a6bf000-7fd01a775000 r--s 02055000 08:01 8522269                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/DatabaseTools/lib/database-impl.jar
+7fd01a775000-7fd01a975000 rw-p 00000000 00:00 0 
+7fd01a975000-7fd01a976000 r-xp 00000000 08:01 8522769                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjawt.so
+7fd01a976000-7fd01ab75000 ---p 00001000 08:01 8522769                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjawt.so
+7fd01ab75000-7fd01ab76000 rw-p 00000000 08:01 8522769                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjawt.so
+7fd01ab76000-7fd01ad76000 rw-p 00000000 00:00 0 
+7fd01ae5d000-7fd01ae5f000 r--s 00004000 08:01 8522289                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/IntelliLang-python/lib/IntelliLang-python.jar
+7fd01ae70000-7fd01b070000 rw-p 00000000 00:00 0 
+7fd01b070000-7fd01b0d1000 r-xp 00000000 08:01 8522788                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsplashscreen.so
+7fd01b0d1000-7fd01b2d1000 ---p 00061000 08:01 8522788                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsplashscreen.so
+7fd01b2d1000-7fd01b2d2000 rw-p 00061000 08:01 8522788                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libsplashscreen.so
+7fd01b2d2000-7fd01b4d3000 rw-p 00000000 00:00 0 
+7fd01b4d3000-7fd01b4d5000 ---p 00000000 00:00 0 
+7fd01b4d5000-7fd01b4d8000 ---p 00000000 00:00 0 
+7fd01b4d8000-7fd01b7d6000 rw-p 00000000 00:00 0 
+7fd01b7d6000-7fd01b7d9000 ---p 00000000 00:00 0 
+7fd01b7d9000-7fd01b8d7000 rw-p 00000000 00:00 0 
+7fd01b8d7000-7fd01b8da000 ---p 00000000 00:00 0 
+7fd01b8da000-7fd01bbd6000 rw-p 00000000 00:00 0 
+7fd01bbd6000-7fd01bbd8000 ---p 00000000 00:00 0 
+7fd01bbd8000-7fd01bbdb000 ---p 00000000 00:00 0 
+7fd01bbdb000-7fd01bcd9000 rw-p 00000000 00:00 0 
+7fd01bcd9000-7fd01bcdc000 ---p 00000000 00:00 0 
+7fd01bcdc000-7fd01bdda000 rw-p 00000000 00:00 0 
+7fd01bdda000-7fd01bdf1000 r-xp 00000000 08:01 8258406                    /home/cassiano-ncc/.PyCharm2017.1/system/tmp/jna1809655179109522001.tmp (deleted)
+7fd01bdf1000-7fd01bef0000 ---p 00017000 08:01 8258406                    /home/cassiano-ncc/.PyCharm2017.1/system/tmp/jna1809655179109522001.tmp (deleted)
+7fd01bef0000-7fd01bef2000 rw-p 00016000 08:01 8258406                    /home/cassiano-ncc/.PyCharm2017.1/system/tmp/jna1809655179109522001.tmp (deleted)
+7fd01bef2000-7fd01befb000 r-xp 00000000 08:01 8522779                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libmanagement.so
+7fd01befb000-7fd01c0fa000 ---p 00009000 08:01 8522779                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libmanagement.so
+7fd01c0fa000-7fd01c0fb000 rw-p 00008000 08:01 8522779                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libmanagement.so
+7fd01c0fb000-7fd01c2fb000 rw-p 00000000 00:00 0 
+7fd01c2fb000-7fd01c2fe000 ---p 00000000 00:00 0 
+7fd01c2fe000-7fd01c5fc000 rw-p 00000000 00:00 0 
+7fd01c5fc000-7fd01c5ff000 ---p 00000000 00:00 0 
+7fd01c5ff000-7fd01c6fd000 rw-p 00000000 00:00 0 
+7fd01c6fd000-7fd01c703000 r--p 00000000 08:01 9573326                    /usr/share/locale/pt_BR/LC_MESSAGES/gdk-pixbuf.mo
+7fd01c703000-7fd01c708000 r-xp 00000000 08:01 9962495                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fd01c708000-7fd01c907000 ---p 00005000 08:01 9962495                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fd01c907000-7fd01c908000 r--p 00004000 08:01 9962495                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fd01c908000-7fd01c909000 rw-p 00005000 08:01 9962495                    /usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+7fd01c909000-7fd01c92b000 r--s 00000000 08:01 9834115                    /usr/share/mime/mime.cache
+7fd01c92b000-7fd01c93c000 r--p 00000000 08:01 10360523                   /usr/share/fonts/opentype/cantarell/Cantarell-Regular.otf
+7fd01c945000-7fd01c9d6000 r--s 016e2000 08:01 8522448                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar
+7fd01c9d6000-7fd01cbd6000 rw-p 00000000 00:00 0 
+7fd01cbd6000-7fd01cbe7000 r-xp 00000000 08:01 8522782                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnio.so
+7fd01cbe7000-7fd01cde7000 ---p 00011000 08:01 8522782                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnio.so
+7fd01cde7000-7fd01cde8000 rw-p 00011000 08:01 8522782                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnio.so
+7fd01cde8000-7fd01fde9000 rw-p 00000000 00:00 0 
+7fd01fde9000-7fd01fe00000 r-xp 00000000 08:01 8522781                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnet.so
+7fd01fe00000-7fd01ffff000 ---p 00017000 08:01 8522781                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnet.so
+7fd01ffff000-7fd020000000 rw-p 00016000 08:01 8522781                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libnet.so
+7fd020000000-7fd020865000 rw-p 00000000 00:00 0 
+7fd020865000-7fd024000000 ---p 00000000 00:00 0 
+7fd024018000-7fd024025000 r--s 00077000 08:01 8522270                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/DatabaseTools/lib/database-openapi.jar
+7fd024025000-7fd024225000 rw-p 00000000 00:00 0 
+7fd024225000-7fd02422f000 r-xp 00000000 08:01 10887989                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7fd02422f000-7fd02442e000 ---p 0000a000 08:01 10887989                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7fd02442e000-7fd02442f000 r--p 00009000 08:01 10887989                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7fd02442f000-7fd024430000 rw-p 0000a000 08:01 10887989                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+7fd024430000-7fd024432000 r-xp 00000000 08:01 10885003                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+7fd024432000-7fd024632000 ---p 00002000 08:01 10885003                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+7fd024632000-7fd024633000 r--p 00002000 08:01 10885003                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+7fd024633000-7fd024634000 rw-p 00003000 08:01 10885003                   /usr/lib/x86_64-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+7fd024634000-7fd024638000 r-xp 00000000 08:01 131111                     /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fd024638000-7fd024837000 ---p 00004000 08:01 131111                     /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fd024837000-7fd024838000 r--p 00003000 08:01 131111                     /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fd024838000-7fd024839000 rw-p 00004000 08:01 131111                     /lib/x86_64-linux-gnu/libuuid.so.1.3.0
+7fd024839000-7fd024840000 r-xp 00000000 08:01 9576357                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7fd024840000-7fd024a3f000 ---p 00007000 08:01 9576357                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7fd024a3f000-7fd024a40000 r--p 00006000 08:01 9576357                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7fd024a40000-7fd024a41000 rw-p 00007000 08:01 9576357                    /usr/lib/x86_64-linux-gnu/libdatrie.so.1.3.3
+7fd024a41000-7fd024a6c000 r-xp 00000000 08:01 9576644                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7fd024a6c000-7fd024c6b000 ---p 0002b000 08:01 9576644                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7fd024c6b000-7fd024c6d000 r--p 0002a000 08:01 9576644                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7fd024c6d000-7fd024c6e000 rw-p 0002c000 08:01 9576644                    /usr/lib/x86_64-linux-gnu/libgraphite2.so.3.0.1
+7fd024c6e000-7fd024caf000 r-xp 00000000 08:01 131130                     /lib/x86_64-linux-gnu/libblkid.so.1.1.0
+7fd024caf000-7fd024eae000 ---p 00041000 08:01 131130                     /lib/x86_64-linux-gnu/libblkid.so.1.1.0
+7fd024eae000-7fd024eb2000 r--p 00040000 08:01 131130                     /lib/x86_64-linux-gnu/libblkid.so.1.1.0
+7fd024eb2000-7fd024eb3000 rw-p 00044000 08:01 131130                     /lib/x86_64-linux-gnu/libblkid.so.1.1.0
+7fd024eb3000-7fd024eb4000 rw-p 00000000 00:00 0 
+7fd024eb4000-7fd024edb000 r-xp 00000000 08:01 131199                     /lib/x86_64-linux-gnu/libexpat.so.1.6.2
+7fd024edb000-7fd0250db000 ---p 00027000 08:01 131199                     /lib/x86_64-linux-gnu/libexpat.so.1.6.2
+7fd0250db000-7fd0250dd000 r--p 00027000 08:01 131199                     /lib/x86_64-linux-gnu/libexpat.so.1.6.2
+7fd0250dd000-7fd0250de000 rw-p 00029000 08:01 131199                     /lib/x86_64-linux-gnu/libexpat.so.1.6.2
+7fd0250de000-7fd025150000 r-xp 00000000 08:01 131108                     /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7fd025150000-7fd02534f000 ---p 00072000 08:01 131108                     /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7fd02534f000-7fd025350000 r--p 00071000 08:01 131108                     /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7fd025350000-7fd025351000 rw-p 00072000 08:01 131108                     /lib/x86_64-linux-gnu/libpcre.so.3.13.3
+7fd025351000-7fd025358000 r-xp 00000000 08:01 9572764                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fd025358000-7fd025558000 ---p 00007000 08:01 9572764                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fd025558000-7fd025559000 r--p 00007000 08:01 9572764                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fd025559000-7fd02555a000 rw-p 00008000 08:01 9572764                    /usr/lib/x86_64-linux-gnu/libffi.so.6.0.4
+7fd02555a000-7fd025562000 r-xp 00000000 08:01 9576359                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7fd025562000-7fd025762000 ---p 00008000 08:01 9576359                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7fd025762000-7fd025763000 r--p 00008000 08:01 9576359                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7fd025763000-7fd025764000 rw-p 00009000 08:01 9576359                    /usr/lib/x86_64-linux-gnu/libthai.so.0.3.0
+7fd025764000-7fd0257f7000 r-xp 00000000 08:01 9576367                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10400.2
+7fd0257f7000-7fd0259f6000 ---p 00093000 08:01 9576367                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10400.2
+7fd0259f6000-7fd0259f8000 r--p 00092000 08:01 9576367                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10400.2
+7fd0259f8000-7fd0259f9000 rw-p 00094000 08:01 9576367                    /usr/lib/x86_64-linux-gnu/libharfbuzz.so.0.10400.2
+7fd0259f9000-7fd025a43000 r-xp 00000000 08:01 131153                     /lib/x86_64-linux-gnu/libmount.so.1.1.0
+7fd025a43000-7fd025c43000 ---p 0004a000 08:01 131153                     /lib/x86_64-linux-gnu/libmount.so.1.1.0
+7fd025c43000-7fd025c44000 r--p 0004a000 08:01 131153                     /lib/x86_64-linux-gnu/libmount.so.1.1.0
+7fd025c44000-7fd025c45000 rw-p 0004b000 08:01 131153                     /lib/x86_64-linux-gnu/libmount.so.1.1.0
+7fd025c45000-7fd025c47000 rw-p 00000000 00:00 0 
+7fd025c47000-7fd025c5b000 r-xp 00000000 08:01 131500                     /lib/x86_64-linux-gnu/libresolv-2.24.so
+7fd025c5b000-7fd025e5a000 ---p 00014000 08:01 131500                     /lib/x86_64-linux-gnu/libresolv-2.24.so
+7fd025e5a000-7fd025e5b000 r--p 00013000 08:01 131500                     /lib/x86_64-linux-gnu/libresolv-2.24.so
+7fd025e5b000-7fd025e5c000 rw-p 00014000 08:01 131500                     /lib/x86_64-linux-gnu/libresolv-2.24.so
+7fd025e5c000-7fd025e5e000 rw-p 00000000 00:00 0 
+7fd025e5e000-7fd025e83000 r-xp 00000000 08:01 131104                     /lib/x86_64-linux-gnu/libselinux.so.1
+7fd025e83000-7fd026082000 ---p 00025000 08:01 131104                     /lib/x86_64-linux-gnu/libselinux.so.1
+7fd026082000-7fd026083000 r--p 00024000 08:01 131104                     /lib/x86_64-linux-gnu/libselinux.so.1
+7fd026083000-7fd026084000 rw-p 00025000 08:01 131104                     /lib/x86_64-linux-gnu/libselinux.so.1
+7fd026084000-7fd026086000 rw-p 00000000 00:00 0 
+7fd026086000-7fd026092000 r-xp 00000000 08:01 9576331                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fd026092000-7fd026292000 ---p 0000c000 08:01 9576331                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fd026292000-7fd026293000 r--p 0000c000 08:01 9576331                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fd026293000-7fd026294000 rw-p 0000d000 08:01 9576331                    /usr/lib/x86_64-linux-gnu/libxcb-render.so.0.0.0
+7fd026294000-7fd026296000 r-xp 00000000 08:01 9576333                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fd026296000-7fd026496000 ---p 00002000 08:01 9576333                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fd026496000-7fd026497000 r--p 00002000 08:01 9576333                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fd026497000-7fd026498000 rw-p 00003000 08:01 9576333                    /usr/lib/x86_64-linux-gnu/libxcb-shm.so.0.0.0
+7fd026498000-7fd026536000 r-xp 00000000 08:01 9576328                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7fd026536000-7fd026736000 ---p 0009e000 08:01 9576328                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7fd026736000-7fd02673e000 r--p 0009e000 08:01 9576328                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7fd02673e000-7fd02673f000 rw-p 000a6000 08:01 9576328                    /usr/lib/x86_64-linux-gnu/libpixman-1.so.0.34.0
+7fd02673f000-7fd026740000 r-xp 00000000 08:01 9576154                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5000.3
+7fd026740000-7fd02693f000 ---p 00001000 08:01 9576154                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5000.3
+7fd02693f000-7fd026940000 r--p 00000000 08:01 9576154                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5000.3
+7fd026940000-7fd026941000 rw-p 00001000 08:01 9576154                    /usr/lib/x86_64-linux-gnu/libgthread-2.0.so.0.5000.3
+7fd026941000-7fd02694b000 r-xp 00000000 08:01 9576010                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fd02694b000-7fd026b4a000 ---p 0000a000 08:01 9576010                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fd026b4a000-7fd026b4b000 r--p 00009000 08:01 9576010                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fd026b4b000-7fd026b4c000 rw-p 0000a000 08:01 9576010                    /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+7fd026b4c000-7fd026b4e000 r-xp 00000000 08:01 9576006                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fd026b4e000-7fd026d4d000 ---p 00002000 08:01 9576006                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fd026d4d000-7fd026d4e000 r--p 00001000 08:01 9576006                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fd026d4e000-7fd026d4f000 rw-p 00002000 08:01 9576006                    /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+7fd026d4f000-7fd026d8b000 r-xp 00000000 08:01 9576326                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.8.0
+7fd026d8b000-7fd026f8a000 ---p 0003c000 08:01 9576326                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.8.0
+7fd026f8a000-7fd026f8c000 r--p 0003b000 08:01 9576326                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.8.0
+7fd026f8c000-7fd026f8d000 rw-p 0003d000 08:01 9576326                    /usr/lib/x86_64-linux-gnu/libfontconfig.so.1.8.0
+7fd026f8d000-7fd02709f000 r-xp 00000000 08:01 131262                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.5000.3
+7fd02709f000-7fd02729e000 ---p 00112000 08:01 131262                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.5000.3
+7fd02729e000-7fd02729f000 r--p 00111000 08:01 131262                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.5000.3
+7fd02729f000-7fd0272a0000 rw-p 00112000 08:01 131262                     /lib/x86_64-linux-gnu/libglib-2.0.so.0.5000.3
+7fd0272a0000-7fd0272a1000 rw-p 00000000 00:00 0 
+7fd0272a1000-7fd0272f3000 r-xp 00000000 08:01 9576153                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5000.3
+7fd0272f3000-7fd0274f2000 ---p 00052000 08:01 9576153                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5000.3
+7fd0274f2000-7fd0274f3000 r--p 00051000 08:01 9576153                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5000.3
+7fd0274f3000-7fd0274f4000 rw-p 00052000 08:01 9576153                    /usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.5000.3
+7fd0274f4000-7fd02753d000 r-xp 00000000 08:01 9573358                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.5
+7fd02753d000-7fd02773c000 ---p 00049000 08:01 9573358                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.5
+7fd02773c000-7fd02773f000 r--p 00048000 08:01 9573358                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.5
+7fd02773f000-7fd027740000 rw-p 0004b000 08:01 9573358                    /usr/lib/x86_64-linux-gnu/libpango-1.0.so.0.4000.5
+7fd027740000-7fd027754000 r-xp 00000000 08:01 9573364                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.5
+7fd027754000-7fd027954000 ---p 00014000 08:01 9573364                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.5
+7fd027954000-7fd027955000 r--p 00014000 08:01 9573364                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.5
+7fd027955000-7fd027956000 rw-p 00015000 08:01 9573364                    /usr/lib/x86_64-linux-gnu/libpangoft2-1.0.so.0.4000.5
+7fd027956000-7fd027ae3000 r-xp 00000000 08:01 9576151                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5000.3
+7fd027ae3000-7fd027ce3000 ---p 0018d000 08:01 9576151                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5000.3
+7fd027ce3000-7fd027ce8000 r--p 0018d000 08:01 9576151                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5000.3
+7fd027ce8000-7fd027ceb000 rw-p 00192000 08:01 9576151                    /usr/lib/x86_64-linux-gnu/libgio-2.0.so.0.5000.3
+7fd027ceb000-7fd027cec000 rw-p 00000000 00:00 0 
+7fd027cec000-7fd027dfa000 r-xp 00000000 08:01 9576335                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.8
+7fd027dfa000-7fd027ffa000 ---p 0010e000 08:01 9576335                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.8
+7fd027ffa000-7fd027ffd000 r--p 0010e000 08:01 9576335                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.8
+7fd027ffd000-7fd027ffe000 rw-p 00111000 08:01 9576335                    /usr/lib/x86_64-linux-gnu/libcairo.so.2.11400.8
+7fd027ffe000-7fd028000000 rw-p 00000000 00:00 0 
+7fd028000000-7fd02813a000 rw-p 00000000 00:00 0 
+7fd02813a000-7fd02c000000 ---p 00000000 00:00 0 
+7fd02c000000-7fd02c0fe000 rw-p 00000000 00:00 0 
+7fd02c0fe000-7fd030000000 ---p 00000000 00:00 0 
+7fd030000000-7fd032263000 rw-p 00000000 00:00 0 
+7fd032263000-7fd034000000 ---p 00000000 00:00 0 
+7fd03401d000-7fd034020000 ---p 00000000 00:00 0 
+7fd034020000-7fd034056000 rw-p 00000000 00:00 0 
+7fd034056000-7fd034061000 r--s 00000000 08:01 14031460                   /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le64.cache-4
+7fd034061000-7fd034074000 r--s 00000000 08:01 14027206                   /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le64.cache-4
+7fd034074000-7fd034096000 r-xp 00000000 08:01 9570743                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3600.5
+7fd034096000-7fd034296000 ---p 00022000 08:01 9570743                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3600.5
+7fd034296000-7fd034297000 r--p 00022000 08:01 9570743                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3600.5
+7fd034297000-7fd034298000 rw-p 00023000 08:01 9570743                    /usr/lib/x86_64-linux-gnu/libgdk_pixbuf-2.0.so.0.3600.5
+7fd034298000-7fd0342bb000 r-xp 00000000 08:01 9576988                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22209.1
+7fd0342bb000-7fd0344ba000 ---p 00023000 08:01 9576988                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22209.1
+7fd0344ba000-7fd0344bd000 r--p 00022000 08:01 9576988                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22209.1
+7fd0344bd000-7fd0344be000 rw-p 00025000 08:01 9576988                    /usr/lib/x86_64-linux-gnu/libatk-1.0.so.0.22209.1
+7fd0344be000-7fd0344c0000 r-xp 00000000 08:01 9576739                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fd0344c0000-7fd0346bf000 ---p 00002000 08:01 9576739                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fd0346bf000-7fd0346c0000 r--p 00001000 08:01 9576739                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fd0346c0000-7fd0346c1000 rw-p 00002000 08:01 9576739                    /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+7fd0346c1000-7fd0346c3000 r-xp 00000000 08:01 9577997                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fd0346c3000-7fd0348c2000 ---p 00002000 08:01 9577997                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fd0348c2000-7fd0348c3000 r--p 00001000 08:01 9577997                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fd0348c3000-7fd0348c4000 rw-p 00002000 08:01 9577997                    /usr/lib/x86_64-linux-gnu/libXcomposite.so.1.0.0
+7fd0348c4000-7fd0348d0000 r-xp 00000000 08:01 9573360                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.5
+7fd0348d0000-7fd034acf000 ---p 0000c000 08:01 9573360                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.5
+7fd034acf000-7fd034ad0000 r--p 0000b000 08:01 9573360                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.5
+7fd034ad0000-7fd034ad1000 rw-p 0000c000 08:01 9573360                    /usr/lib/x86_64-linux-gnu/libpangocairo-1.0.so.0.4000.5
+7fd034ad1000-7fd034ad4000 r-xp 00000000 08:01 9576152                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5000.3
+7fd034ad4000-7fd034cd3000 ---p 00003000 08:01 9576152                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5000.3
+7fd034cd3000-7fd034cd4000 r--p 00002000 08:01 9576152                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5000.3
+7fd034cd4000-7fd034cd5000 rw-p 00003000 08:01 9576152                    /usr/lib/x86_64-linux-gnu/libgmodule-2.0.so.0.5000.3
+7fd034cd5000-7fd034d85000 r-xp 00000000 08:01 9578469                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.31
+7fd034d85000-7fd034f84000 ---p 000b0000 08:01 9578469                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.31
+7fd034f84000-7fd034f88000 r--p 000af000 08:01 9578469                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.31
+7fd034f88000-7fd034f8a000 rw-p 000b3000 08:01 9578469                    /usr/lib/x86_64-linux-gnu/libgdk-x11-2.0.so.0.2400.31
+7fd034f8a000-7fd0353c6000 r-xp 00000000 08:01 9578470                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.31
+7fd0353c6000-7fd0355c5000 ---p 0043c000 08:01 9578470                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.31
+7fd0355c5000-7fd0355cc000 r--p 0043b000 08:01 9578470                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.31
+7fd0355cc000-7fd0355d0000 rw-p 00442000 08:01 9578470                    /usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.31
+7fd0355d0000-7fd0355d3000 rw-p 00000000 00:00 0 
+7fd0355d3000-7fd0355d6000 ---p 00000000 00:00 0 
+7fd0355d6000-7fd0356d4000 rw-p 00000000 00:00 0 
+7fd0356d4000-7fd0356d9000 r-xp 00000000 08:01 9576737                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fd0356d9000-7fd0358d8000 ---p 00005000 08:01 9576737                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fd0358d8000-7fd0358d9000 r--p 00004000 08:01 9576737                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fd0358d9000-7fd0358da000 rw-p 00005000 08:01 9576737                    /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+7fd0358da000-7fd0358e4000 r-xp 00000000 08:01 9597299                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fd0358e4000-7fd035ae3000 ---p 0000a000 08:01 9597299                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fd035ae3000-7fd035ae4000 r--p 00009000 08:01 9597299                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fd035ae4000-7fd035ae5000 rw-p 0000a000 08:01 9597299                    /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+7fd035ae5000-7fd035ae8000 ---p 00000000 00:00 0 
+7fd035ae8000-7fd035be6000 rw-p 00000000 00:00 0 
+7fd035be6000-7fd035c17000 r-xp 00000000 08:01 9575986                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.28.0
+7fd035c17000-7fd035e17000 ---p 00031000 08:01 9575986                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.28.0
+7fd035e17000-7fd035e18000 r--p 00031000 08:01 9575986                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.28.0
+7fd035e18000-7fd035e19000 rw-p 00032000 08:01 9575986                    /usr/lib/x86_64-linux-gnu/libpng16.so.16.28.0
+7fd035e19000-7fd035e32000 r-xp 00000000 08:01 131185                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd035e32000-7fd036031000 ---p 00019000 08:01 131185                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd036031000-7fd036032000 r--p 00018000 08:01 131185                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd036032000-7fd036033000 rw-p 00019000 08:01 131185                     /lib/x86_64-linux-gnu/libz.so.1.2.8
+7fd036033000-7fd036049000 r-xp 00000000 08:01 131152                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd036049000-7fd036248000 ---p 00016000 08:01 131152                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd036248000-7fd036249000 r--p 00015000 08:01 131152                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd036249000-7fd03624a000 rw-p 00016000 08:01 131152                     /lib/x86_64-linux-gnu/libgcc_s.so.1
+7fd03624a000-7fd0362f2000 r-xp 00000000 08:01 9573355                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.3
+7fd0362f2000-7fd0364f2000 ---p 000a8000 08:01 9573355                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.3
+7fd0364f2000-7fd0364f8000 r--p 000a8000 08:01 9573355                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.3
+7fd0364f8000-7fd0364f9000 rw-p 000ae000 08:01 9573355                    /usr/lib/x86_64-linux-gnu/libfreetype.so.6.12.3
+7fd0364f9000-7fd0365d5000 r-xp 00000000 08:01 8522753                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libfontmanager.so
+7fd0365d5000-7fd0367d4000 ---p 000dc000 08:01 8522753                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libfontmanager.so
+7fd0367d4000-7fd0367da000 rw-p 000db000 08:01 8522753                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libfontmanager.so
+7fd0367da000-7fd0369ec000 rw-p 00000000 00:00 0 
+7fd0369ec000-7fd0369ff000 r-xp 00000000 08:01 131600                     /lib/x86_64-linux-gnu/libbsd.so.0.8.3
+7fd0369ff000-7fd036bff000 ---p 00013000 08:01 131600                     /lib/x86_64-linux-gnu/libbsd.so.0.8.3
+7fd036bff000-7fd036c00000 r--p 00013000 08:01 131600                     /lib/x86_64-linux-gnu/libbsd.so.0.8.3
+7fd036c00000-7fd036c01000 rw-p 00014000 08:01 131600                     /lib/x86_64-linux-gnu/libbsd.so.0.8.3
+7fd036c01000-7fd036c02000 rw-p 00000000 00:00 0 
+7fd036c02000-7fd036c07000 r-xp 00000000 08:01 9575995                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fd036c07000-7fd036e06000 ---p 00005000 08:01 9575995                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fd036e06000-7fd036e07000 r--p 00004000 08:01 9575995                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fd036e07000-7fd036e08000 rw-p 00005000 08:01 9575995                    /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+7fd036e08000-7fd036e0b000 r-xp 00000000 08:01 9575993                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fd036e0b000-7fd03700a000 ---p 00003000 08:01 9575993                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fd03700a000-7fd03700b000 r--p 00002000 08:01 9575993                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fd03700b000-7fd03700c000 rw-p 00003000 08:01 9575993                    /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+7fd03700c000-7fd037033000 r-xp 00000000 08:01 9575997                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fd037033000-7fd037232000 ---p 00027000 08:01 9575997                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fd037232000-7fd037233000 r--p 00026000 08:01 9575997                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fd037233000-7fd037234000 rw-p 00027000 08:01 9575997                    /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+7fd037234000-7fd037243000 r-xp 00000000 08:01 9578001                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fd037243000-7fd037442000 ---p 0000f000 08:01 9578001                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fd037442000-7fd037443000 r--p 0000e000 08:01 9578001                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fd037443000-7fd037444000 rw-p 0000f000 08:01 9578001                    /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+7fd037444000-7fd037449000 r-xp 00000000 08:01 9578311                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fd037449000-7fd037648000 ---p 00005000 08:01 9578311                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fd037648000-7fd037649000 r--p 00004000 08:01 9578311                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fd037649000-7fd03764a000 rw-p 00005000 08:01 9578311                    /usr/lib/x86_64-linux-gnu/libXtst.so.6.1.0
+7fd03764a000-7fd037653000 r-xp 00000000 08:01 9576008                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fd037653000-7fd037852000 ---p 00009000 08:01 9576008                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fd037852000-7fd037853000 r--p 00008000 08:01 9576008                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fd037853000-7fd037854000 rw-p 00009000 08:01 9576008                    /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+7fd037854000-7fd03798e000 r-xp 00000000 08:01 9576001                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fd03798e000-7fd037b8e000 ---p 0013a000 08:01 9576001                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fd037b8e000-7fd037b8f000 r--p 0013a000 08:01 9576001                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fd037b8f000-7fd037b94000 rw-p 0013b000 08:01 9576001                    /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+7fd037b94000-7fd037ba5000 r-xp 00000000 08:01 9576004                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fd037ba5000-7fd037da4000 ---p 00011000 08:01 9576004                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fd037da4000-7fd037da5000 r--p 00010000 08:01 9576004                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fd037da5000-7fd037da6000 rw-p 00011000 08:01 9576004                    /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+7fd037da6000-7fd037dfc000 r-xp 00000000 08:01 8522750                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt_xawt.so
+7fd037dfc000-7fd037ffb000 ---p 00056000 08:01 8522750                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt_xawt.so
+7fd037ffb000-7fd037fff000 rw-p 00055000 08:01 8522750                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt_xawt.so
+7fd037fff000-7fd038000000 rw-p 00000000 00:00 0 
+7fd038000000-7fd03b7e8000 rw-p 00000000 00:00 0 
+7fd03b7e8000-7fd03c000000 ---p 00000000 00:00 0 
+7fd03c000000-7fd03c0ae000 rw-p 00000000 00:00 0 
+7fd03c0ae000-7fd040000000 ---p 00000000 00:00 0 
+7fd040000000-7fd0402b5000 rw-p 00000000 00:00 0 
+7fd0402b5000-7fd044000000 ---p 00000000 00:00 0 
+7fd044000000-7fd0452d2000 rw-p 00000000 00:00 0 
+7fd0452d2000-7fd048000000 ---p 00000000 00:00 0 
+7fd048000000-7fd048141000 rw-p 00000000 00:00 0 
+7fd048141000-7fd04c000000 ---p 00000000 00:00 0 
+7fd04c000000-7fd04c182000 rw-p 00000000 00:00 0 
+7fd04c182000-7fd050000000 ---p 00000000 00:00 0 
+7fd050000000-7fd05089c000 rw-p 00000000 00:00 0 
+7fd05089c000-7fd054000000 ---p 00000000 00:00 0 
+7fd054000000-7fd054afd000 rw-p 00000000 00:00 0 
+7fd054afd000-7fd058000000 ---p 00000000 00:00 0 
+7fd058000000-7fd0583d9000 rw-p 00000000 00:00 0 
+7fd0583d9000-7fd05c000000 ---p 00000000 00:00 0 
+7fd05c000000-7fd05c004000 r--s 00000000 08:01 14026982                   /var/cache/fontconfig/de156ccd2eddbdc19d37a45b8b2aac9c-le64.cache-4
+7fd05c004000-7fd05c005000 r--s 00000000 08:01 14026576                   /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le64.cache-4
+7fd05c005000-7fd05c006000 r--s 00000000 08:01 14033025                   /var/cache/fontconfig/0bd3dc0958fa2205aaaa8ebb13e2872b-le64.cache-4
+7fd05c006000-7fd05c00a000 r--s 00000000 08:01 14026981                   /var/cache/fontconfig/c57959a16110560c8d0fcea73374aeeb-le64.cache-4
+7fd05c00a000-7fd05c010000 r--s 00000000 08:01 14032939                   /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le64.cache-4
+7fd05c010000-7fd05c011000 r--s 00000000 08:01 14032843                   /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le64.cache-4
+7fd05c011000-7fd05c01d000 r--s 00000000 08:01 14032826                   /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le64.cache-4
+7fd05c01d000-7fd05c021000 r--s 00000000 08:01 14029904                   /var/cache/fontconfig/246184dc75a16901ca37d96895904249-le64.cache-4
+7fd05c021000-7fd05c023000 r--s 00000000 08:01 14028437                   /var/cache/fontconfig/62f91419b9ebdb6975e7e41ab6412357-le64.cache-4
+7fd05c023000-7fd05c026000 r--s 00000000 08:01 14032367                   /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le64.cache-4
+7fd05c026000-7fd05c027000 r--s 00000000 08:01 9044915                    /home/cassiano-ncc/.cache/fontconfig/36515d1ab9acdef5effc1d08d6cf1f42-le64.cache-4
+7fd05c036000-7fd05c039000 r--s 00015000 08:01 8522848                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/jce.jar
+7fd05c039000-7fd05c03e000 r--s 00098000 08:01 8522851                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/jsse.jar
+7fd05c03e000-7fd05c03f000 r--p 00000000 00:00 0 
+7fd05c03f000-7fd05c068000 r--p 00000000 08:01 9578426                    /usr/share/locale/pt/LC_MESSAGES/gtk20-properties.mo
+7fd05c068000-7fd05c091000 r--p 00000000 08:01 9578428                    /usr/share/locale/pt_BR/LC_MESSAGES/gtk20-properties.mo
+7fd05c091000-7fd05c0a0000 r--p 00000000 08:01 9578429                    /usr/share/locale/pt_BR/LC_MESSAGES/gtk20.mo
+7fd05c0a0000-7fd05c0b3000 r--s 00344000 08:01 8522864                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/resources.jar
+7fd05c0b3000-7fd05c156000 r-xp 00000000 08:01 8522748                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt.so
+7fd05c156000-7fd05c356000 ---p 000a3000 08:01 8522748                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt.so
+7fd05c356000-7fd05c362000 rw-p 000a3000 08:01 8522748                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libawt.so
+7fd05c362000-7fd05c386000 rw-p 00000000 00:00 0 
+7fd05c386000-7fd05c38b000 r--s 002f9000 08:01 8522798                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/charsets.jar
+7fd05c38b000-7fd05c392000 r--s 00000000 08:01 9600586                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7fd05c392000-7fd05c3a1000 r--p 00000000 08:01 9578772                    /usr/share/locale/pt_BR/LC_MESSAGES/libc.mo
+7fd05c3a4000-7fd05c3a5000 r--s 00008000 08:01 8522816                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/sunec.jar
+7fd05c3a5000-7fd05c3af000 r--s 00116000 08:01 8522813                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/localedata.jar
+7fd05c3af000-7fd05c3b4000 r--s 0003b000 08:01 8522815                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/sunjce_provider.jar
+7fd05c3b5000-7fd05c3b9000 r--s 00037000 08:01 8522817                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/sunpkcs11.jar
+7fd05c3b9000-7fd05c3d5000 r--s 00393000 08:01 8522809                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/cldrdata.jar
+7fd05c462000-7fd05c479000 r--s 01273000 08:01 8522190                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/resources_en.jar
+7fd05c4ec000-7fd05c52a000 r--s 002ad000 08:01 8522142                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/icons.jar
+7fd05c5eb000-7fd05c5ed000 r--s 00014000 08:01 8522145                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/imageio-tiff-3.2.1.jar
+7fd05c5f4000-7fd05c60d000 r--s 00135000 08:01 8522211                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/xercesImpl.jar
+7fd05c6bb000-7fd05c6c9000 r--s 000c9000 08:01 8522169                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/kotlin-runtime.jar
+7fd05c712000-7fd05c715000 ---p 00000000 00:00 0 
+7fd05c715000-7fd05c74b000 rw-p 00000000 00:00 0 
+7fd05c74b000-7fd05c74e000 r--s 00358000 08:01 8522189                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/resources.jar
+7fd05c81b000-7fd05c834000 r--s 00562000 08:01 8522265                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/CSS/lib/css.jar
+7fd05c834000-7fd05c866000 r--s 0022d000 08:01 8522168                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/kotlin-reflect.jar
+7fd05c866000-7fd05cb8d000 r--s 06701000 08:01 8522187                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/pycharm.jar
+7fd05cb8d000-7fd05cb8e000 ---p 00000000 00:00 0 
+7fd05cb8e000-7fd05cc8e000 rw-p 00000000 00:00 0 
+7fd05cc8e000-7fd05cc91000 ---p 00000000 00:00 0 
+7fd05cc91000-7fd05cd8f000 rw-p 00000000 00:00 0 
+7fd05cd8f000-7fd05cd92000 ---p 00000000 00:00 0 
+7fd05cd92000-7fd05ce90000 rw-p 00000000 00:00 0 
+7fd05ce90000-7fd05ce93000 ---p 00000000 00:00 0 
+7fd05ce93000-7fd05cf91000 rw-p 00000000 00:00 0 
+7fd05cf91000-7fd05cf94000 ---p 00000000 00:00 0 
+7fd05cf94000-7fd05d092000 rw-p 00000000 00:00 0 
+7fd05d092000-7fd05d095000 ---p 00000000 00:00 0 
+7fd05d095000-7fd05d193000 rw-p 00000000 00:00 0 
+7fd05d193000-7fd05d32e000 r--p 00000000 08:01 9582772                    /usr/lib/locale/locale-archive
+7fd05d32e000-7fd05d331000 ---p 00000000 00:00 0 
+7fd05d331000-7fd05d42f000 rw-p 00000000 00:00 0 
+7fd05d42f000-7fd05d432000 ---p 00000000 00:00 0 
+7fd05d432000-7fd05d530000 rw-p 00000000 00:00 0 
+7fd05d530000-7fd05d531000 ---p 00000000 00:00 0 
+7fd05d531000-7fd05d631000 rw-p 00000000 00:00 0 
+7fd05d631000-7fd05d800000 r--s 03c22000 08:01 8522865                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/rt.jar
+7fd05d800000-7fd060000000 rw-p 00000000 00:00 0 
+7fd060000000-7fd060198000 rw-p 00000000 00:00 0 
+7fd060198000-7fd064000000 ---p 00000000 00:00 0 
+7fd064010000-7fd06401d000 r--s 000ab000 08:01 8522208                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/velocity.jar
+7fd064023000-7fd064032000 rw-s 00000000 00:05 46891008                   /SYSV00000000 (deleted)
+7fd064032000-7fd064064000 r--s 005bd000 08:01 8522207                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/util.jar
+7fd064064000-7fd0640f5000 r--s 013b3000 08:01 8522812                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/ext/jfxrt.jar
+7fd0640f5000-7fd0641b9000 rw-p 00000000 00:00 0 
+7fd0641b9000-7fd0641ba000 ---p 00000000 00:00 0 
+7fd0641ba000-7fd064e7d000 rw-p 00000000 00:00 0 
+7fd064e7d000-7fd064eff000 ---p 00000000 00:00 0 
+7fd064eff000-7fd065000000 rw-p 00000000 00:00 0 
+7fd065000000-7fd06eb10000 rwxp 00000000 00:00 0 
+7fd06eb10000-7fd074000000 ---p 00000000 00:00 0 
+7fd074000000-7fd076791000 rw-p 00000000 00:00 0 
+7fd076791000-7fd078000000 ---p 00000000 00:00 0 
+7fd078006000-7fd07811d000 rw-p 00000000 00:00 0 
+7fd07811d000-7fd07815a000 ---p 00000000 00:00 0 
+7fd07815a000-7fd0781fc000 rw-p 00000000 00:00 0 
+7fd0781fc000-7fd07827e000 ---p 00000000 00:00 0 
+7fd07827e000-7fd07827f000 rw-p 00000000 00:00 0 
+7fd07827f000-7fd078280000 ---p 00000000 00:00 0 
+7fd078280000-7fd078380000 rw-p 00000000 00:00 0 
+7fd078380000-7fd078381000 ---p 00000000 00:00 0 
+7fd078381000-7fd0786ee000 rw-p 00000000 00:00 0 
+7fd0786ee000-7fd078841000 ---p 00000000 00:00 0 
+7fd078841000-7fd07885b000 r-xp 00000000 08:01 8522792                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libzip.so
+7fd07885b000-7fd078a5a000 ---p 0001a000 08:01 8522792                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libzip.so
+7fd078a5a000-7fd078a5b000 rw-p 00019000 08:01 8522792                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libzip.so
+7fd078a5b000-7fd078a65000 r-xp 00000000 08:01 131494                     /lib/x86_64-linux-gnu/libnss_files-2.24.so
+7fd078a65000-7fd078c65000 ---p 0000a000 08:01 131494                     /lib/x86_64-linux-gnu/libnss_files-2.24.so
+7fd078c65000-7fd078c66000 r--p 0000a000 08:01 131494                     /lib/x86_64-linux-gnu/libnss_files-2.24.so
+7fd078c66000-7fd078c67000 rw-p 0000b000 08:01 131494                     /lib/x86_64-linux-gnu/libnss_files-2.24.so
+7fd078c67000-7fd078c6d000 rw-p 00000000 00:00 0 
+7fd078c6d000-7fd078c78000 r-xp 00000000 08:01 131496                     /lib/x86_64-linux-gnu/libnss_nis-2.24.so
+7fd078c78000-7fd078e77000 ---p 0000b000 08:01 131496                     /lib/x86_64-linux-gnu/libnss_nis-2.24.so
+7fd078e77000-7fd078e78000 r--p 0000a000 08:01 131496                     /lib/x86_64-linux-gnu/libnss_nis-2.24.so
+7fd078e78000-7fd078e79000 rw-p 0000b000 08:01 131496                     /lib/x86_64-linux-gnu/libnss_nis-2.24.so
+7fd078e79000-7fd078e8d000 r-xp 00000000 08:01 131491                     /lib/x86_64-linux-gnu/libnsl-2.24.so
+7fd078e8d000-7fd07908d000 ---p 00014000 08:01 131491                     /lib/x86_64-linux-gnu/libnsl-2.24.so
+7fd07908d000-7fd07908e000 r--p 00014000 08:01 131491                     /lib/x86_64-linux-gnu/libnsl-2.24.so
+7fd07908e000-7fd07908f000 rw-p 00015000 08:01 131491                     /lib/x86_64-linux-gnu/libnsl-2.24.so
+7fd07908f000-7fd079091000 rw-p 00000000 00:00 0 
+7fd079091000-7fd079098000 r-xp 00000000 08:01 131492                     /lib/x86_64-linux-gnu/libnss_compat-2.24.so
+7fd079098000-7fd079297000 ---p 00007000 08:01 131492                     /lib/x86_64-linux-gnu/libnss_compat-2.24.so
+7fd079297000-7fd079298000 r--p 00006000 08:01 131492                     /lib/x86_64-linux-gnu/libnss_compat-2.24.so
+7fd079298000-7fd079299000 rw-p 00007000 08:01 131492                     /lib/x86_64-linux-gnu/libnss_compat-2.24.so
+7fd079299000-7fd0792c3000 r-xp 00000000 08:01 8522763                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjava.so
+7fd0792c3000-7fd0794c3000 ---p 0002a000 08:01 8522763                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjava.so
+7fd0794c3000-7fd0794c5000 rw-p 0002a000 08:01 8522763                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libjava.so
+7fd0794c5000-7fd0794d4000 r-xp 00000000 08:01 8522791                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libverify.so
+7fd0794d4000-7fd0796d3000 ---p 0000f000 08:01 8522791                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libverify.so
+7fd0796d3000-7fd0796d5000 rw-p 0000e000 08:01 8522791                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/libverify.so
+7fd0796d5000-7fd0796dc000 r-xp 00000000 08:01 131501                     /lib/x86_64-linux-gnu/librt-2.24.so
+7fd0796dc000-7fd0798db000 ---p 00007000 08:01 131501                     /lib/x86_64-linux-gnu/librt-2.24.so
+7fd0798db000-7fd0798dc000 r--p 00006000 08:01 131501                     /lib/x86_64-linux-gnu/librt-2.24.so
+7fd0798dc000-7fd0798dd000 rw-p 00007000 08:01 131501                     /lib/x86_64-linux-gnu/librt-2.24.so
+7fd0798dd000-7fd0799e0000 r-xp 00000000 08:01 131488                     /lib/x86_64-linux-gnu/libm-2.24.so
+7fd0799e0000-7fd079bdf000 ---p 00103000 08:01 131488                     /lib/x86_64-linux-gnu/libm-2.24.so
+7fd079bdf000-7fd079be0000 r--p 00102000 08:01 131488                     /lib/x86_64-linux-gnu/libm-2.24.so
+7fd079be0000-7fd079be1000 rw-p 00103000 08:01 131488                     /lib/x86_64-linux-gnu/libm-2.24.so
+7fd079be1000-7fd07a817000 r-xp 00000000 08:01 8522796                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/server/libjvm.so
+7fd07a817000-7fd07aa16000 ---p 00c36000 08:01 8522796                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/server/libjvm.so
+7fd07aa16000-7fd07aae5000 rw-p 00c35000 08:01 8522796                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/server/libjvm.so
+7fd07aae5000-7fd07ab27000 rw-p 00000000 00:00 0 
+7fd07ab27000-7fd07acbc000 r-xp 00000000 08:01 131484                     /lib/x86_64-linux-gnu/libc-2.24.so
+7fd07acbc000-7fd07aebc000 ---p 00195000 08:01 131484                     /lib/x86_64-linux-gnu/libc-2.24.so
+7fd07aebc000-7fd07aec0000 r--p 00195000 08:01 131484                     /lib/x86_64-linux-gnu/libc-2.24.so
+7fd07aec0000-7fd07aec2000 rw-p 00199000 08:01 131484                     /lib/x86_64-linux-gnu/libc-2.24.so
+7fd07aec2000-7fd07aec6000 rw-p 00000000 00:00 0 
+7fd07aec6000-7fd07aec9000 r-xp 00000000 08:01 131487                     /lib/x86_64-linux-gnu/libdl-2.24.so
+7fd07aec9000-7fd07b0c8000 ---p 00003000 08:01 131487                     /lib/x86_64-linux-gnu/libdl-2.24.so
+7fd07b0c8000-7fd07b0c9000 r--p 00002000 08:01 131487                     /lib/x86_64-linux-gnu/libdl-2.24.so
+7fd07b0c9000-7fd07b0ca000 rw-p 00003000 08:01 131487                     /lib/x86_64-linux-gnu/libdl-2.24.so
+7fd07b0ca000-7fd07b0df000 r-xp 00000000 08:01 8522745                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/jli/libjli.so
+7fd07b0df000-7fd07b2df000 ---p 00015000 08:01 8522745                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/jli/libjli.so
+7fd07b2df000-7fd07b2e0000 rw-p 00015000 08:01 8522745                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/jre64/lib/amd64/jli/libjli.so
+7fd07b2e0000-7fd07b2f8000 r-xp 00000000 08:01 131499                     /lib/x86_64-linux-gnu/libpthread-2.24.so
+7fd07b2f8000-7fd07b4f7000 ---p 00018000 08:01 131499                     /lib/x86_64-linux-gnu/libpthread-2.24.so
+7fd07b4f7000-7fd07b4f8000 r--p 00017000 08:01 131499                     /lib/x86_64-linux-gnu/libpthread-2.24.so
+7fd07b4f8000-7fd07b4f9000 rw-p 00018000 08:01 131499                     /lib/x86_64-linux-gnu/libpthread-2.24.so
+7fd07b4f9000-7fd07b4fd000 rw-p 00000000 00:00 0 
+7fd07b4fd000-7fd07b520000 r-xp 00000000 08:01 131480                     /lib/x86_64-linux-gnu/ld-2.24.so
+7fd07b522000-7fd07b525000 r--s 00009000 08:01 8522266                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/plugins/CSS/lib/resources_en.jar
+7fd07b525000-7fd07b529000 r--s 00112000 08:01 8522157                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/jna.jar
+7fd07b529000-7fd07b534000 r--s 00084000 08:01 8522206                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/trove4j.jar
+7fd07b534000-7fd07b5fd000 rw-p 00000000 00:00 0 
+7fd07b5fd000-7fd07b600000 ---p 00000000 00:00 0 
+7fd07b600000-7fd07b700000 rw-p 00000000 00:00 0 
+7fd07b702000-7fd07b703000 r--s 0000b000 08:01 8522216                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/xpp3-1.1.4-min.jar
+7fd07b703000-7fd07b70c000 r--s 0006f000 08:01 8522171                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/log4j.jar
+7fd07b70c000-7fd07b70f000 r--s 00024000 08:01 8522150                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/jdom.jar
+7fd07b70f000-7fd07b711000 r--s 0002a000 08:01 8522133                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/extensions.jar
+7fd07b711000-7fd07b712000 r--s 00009000 08:01 8522118                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/bootstrap.jar
+7fd07b712000-7fd07b713000 r--s 00004000 08:01 8522117                    /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/boot.jar
+7fd07b713000-7fd07b71b000 rw-s 00000000 08:01 4459510                    /tmp/hsperfdata_cassiano-ncc/3365
+7fd07b71b000-7fd07b71c000 rw-p 00000000 00:00 0 
+7fd07b71c000-7fd07b71d000 r--p 00000000 00:00 0 
+7fd07b71d000-7fd07b720000 rw-p 00000000 00:00 0 
+7fd07b720000-7fd07b721000 r--p 00023000 08:01 131480                     /lib/x86_64-linux-gnu/ld-2.24.so
+7fd07b721000-7fd07b722000 rw-p 00024000 08:01 131480                     /lib/x86_64-linux-gnu/ld-2.24.so
+7fd07b722000-7fd07b723000 rw-p 00000000 00:00 0 
+7ffc2a3cd000-7ffc2a3ee000 rw-p 00000000 00:00 0                          [stack]
+7ffc2a3f4000-7ffc2a3f6000 r--p 00000000 00:00 0                          [vvar]
+7ffc2a3f6000-7ffc2a3f8000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Xbootclasspath/a:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/boot.jar -Xms128m -Xmx750m -XX:ReservedCodeCacheSize=240m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -XX:+HeapDumpOnOutOfMemoryError -XX:-OmitStackTraceInFastThrow -Dawt.useSystemAAFontSettings=lcd -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine -XX:ErrorFile=/home/cassiano-ncc/java_error_in_PYCHARM_%p.log -XX:HeapDumpPath=/home/cassiano-ncc/java_error_in_PYCHARM.hprof -Didea.paths.selector=PyCharm2017.1 -Djb.vmOptionsFile=/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/bin/pycharm64.vmoptions -Didea.platform.prefix=Python 
+java_command: com.intellij.idea.Main
+java_class_path (initial): /home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/bootstrap.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/extensions.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/util.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/jdom.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/log4j.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/trove4j.jar:/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/lib/jna.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+USERNAME=cassiano-ncc
+LD_LIBRARY_PATH=/home/cassiano-ncc/Downloads/pycharm-professional-2017.1.1/pycharm-2017.1.1/bin:
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xa32fd0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xa32fd0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: SIG_IGN, sa_mask[0]=00000000000010000000000000000000, sa_flags=SA_RESTART
+SIGXFSZ: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x89ec10], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x8a02d0], sa_mask[0]=00000000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGINT: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGTERM: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGQUIT: [libjvm.so+0x8a19c0], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+
+
+---------------  S Y S T E M  ---------------
+
+OS:PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+
+uname:Linux 4.9.0-4-amd64 #1 SMP Debian 4.9.51-1 (2017-09-28) x86_64
+libc:glibc 2.24 NPTL 2.24 
+rlimit: STACK 8192k, CORE 0k, NPROC 17491, NOFILE 1048576, AS infinity
+load average:0,99 0,67 0,67
+
+/proc/meminfo:
+MemTotal:        4567016 kB
+MemFree:          675520 kB
+MemAvailable:    2347348 kB
+Buffers:          140732 kB
+Cached:          1706320 kB
+SwapCached:            0 kB
+Active:          2236832 kB
+Inactive:        1424536 kB
+Active(anon):    1419028 kB
+Inactive(anon):   416268 kB
+Active(file):     817804 kB
+Inactive(file):  1008268 kB
+Unevictable:         176 kB
+Mlocked:             176 kB
+SwapTotal:       4716540 kB
+SwapFree:        4716540 kB
+Dirty:              4136 kB
+Writeback:             0 kB
+AnonPages:       1814456 kB
+Mapped:           327772 kB
+Shmem:             20968 kB
+Slab:             135624 kB
+SReclaimable:     105976 kB
+SUnreclaim:        29648 kB
+KernelStack:        7616 kB
+PageTables:        34752 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     7000048 kB
+Committed_AS:    5195536 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      132888 kB
+DirectMap2M:     4585472 kB
+DirectMap1G:           0 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 16 model 4 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, popcnt, mmxext, 3dnowpref, lzcnt, sse4a, tsc, tscinvbit, tscinv
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 4
+model name	: AMD Phenom(tm) II X2 B55 Processor
+stepping	: 3
+microcode	: 0x10000b6
+cpu MHz		: 3000.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc rep_good nopl nonstop_tsc extd_apicid eagerfpu pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt hw_pstate vmmcall npt lbrv svm_lock nrip_save
+bugs		: tlb_mmatch fxsave_leak sysret_ss_attrs null_seg amd_e400
+bogomips	: 5985.11
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 16
+model		: 4
+model name	: AMD Phenom(tm) II X2 B55 Processor
+stepping	: 3
+microcode	: 0x10000b6
+cpu MHz		: 3000.000
+cache size	: 512 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 5
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm 3dnowext 3dnow constant_tsc rep_good nopl nonstop_tsc extd_apicid eagerfpu pni monitor cx16 popcnt lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt hw_pstate vmmcall npt lbrv svm_lock nrip_save
+bugs		: tlb_mmatch fxsave_leak sysret_ss_attrs null_seg amd_e400
+bogomips	: 5985.12
+TLB size	: 1024 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 48 bits physical, 48 bits virtual
+power management: ts ttp tm stc 100mhzsteps hwpstate
+
+
+
+Memory: 4k page, physical 4567016k(675520k free), swap 4716540k(4716540k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.112-b21) for linux-amd64 JRE (1.8.0_112-release-736-b21), built on Apr 21 2017 11:20:46 by "root" with gcc 4.4.7 20120313 (Red Hat 4.4.7-16)
+
+time: Mon Dec 11 11:01:36 2017
+elapsed time: 1919 seconds (0d 0h 31m 59s)
+
